@@ -1,0 +1,145 @@
+
+PROJECT DOCUMENTATION
+
+
+Overview: 
+•	This project was created by Jerry Paddy (currently studying at University of Ghana, 2023).
+•	This project aims at implementing data structures and devising algorithms that would help manage an inventory system.
+
+ 
+Objectives:
+•	Use abstract data types like stacks, queues, lists, hash maps to store and retrieve data
+•	Integrate the application with a database tool 
+•	Help the inventory manager keep track of added goods and removed goods
+•	Help the inventory manager store information about vendors
+•	Help the inventory manager view bills 
+•	Help the inventory manager issue goods and view goods issued
+
+
+
+Pre-requisites in using the system:
+•	User should have Java with JavaFX installed on the desktop or laptop
+•	User should have installed MySQL and set the username as the default username which is “root”. Server name should be “localhost:3306”. This is the default server by MySQL. Password which should be assigned to root should be ~!@#$%^&*()_  . 
+•	User should create a schema called “sys” and run the following commands in an SQL script file. 
+
+CREATE TABLE beverages (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(45) NOT NULL,
+    number_in_package INT NOT NULL,
+    cost_per_item FLOAT NOT NULL,
+    selling_price FLOAT NOT NULL,
+    gross_cost AS (cost_per_item * number_in_package) STORED
+);
+
+CREATE TABLE bakery (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(45) NOT NULL,
+    number_in_package INT NOT NULL,
+    cost_per_item FLOAT NOT NULL,
+    selling_price FLOAT NOT NULL,
+    gross_cost AS (cost_per_item * number_in_package) STORED
+);
+CREATE TABLE canned (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(45) NOT NULL,
+    number_in_package INT NOT NULL,
+    cost_per_item FLOAT NOT NULL,
+    selling_price FLOAT NOT NULL,
+    gross_cost AS (cost_per_item * number_in_package) STORED
+);
+CREATE TABLE dairy (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(45) NOT NULL,
+    number_in_package INT NOT NULL,
+    cost_per_item FLOAT NOT NULL,
+    selling_price FLOAT NOT NULL,
+    gross_cost AS (cost_per_item * number_in_package) STORED
+);
+CREATE TABLE dry_goods (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(45) NOT NULL,
+    number_in_package INT NOT NULL,
+    cost_per_item FLOAT NOT NULL,
+    selling_price FLOAT NOT NULL,
+    gross_cost AS (cost_per_item * number_in_package) STORED
+);
+CREATE TABLE farm_produce (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(45) NOT NULL,
+    number_in_package INT NOT NULL,
+    cost_per_item FLOAT NOT NULL,
+    selling_price FLOAT NOT NULL,
+    gross_cost AS (cost_per_item * number_in_package) STORED
+);
+CREATE TABLE meat (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(45) NOT NULL,
+    number_in_package INT NOT NULL,
+    cost_per_item FLOAT NOT NULL,
+    selling_price FLOAT NOT NULL,
+    gross_cost AS (cost_per_item * number_in_package) STORED
+);
+CREATE TABLE home_care (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(45) NOT NULL,
+    number_in_package INT NOT NULL,
+    cost_per_item FLOAT NOT NULL,
+    selling_price FLOAT NOT NULL,
+    gross_cost AS (cost_per_item * number_in_package) STORED
+);
+CREATE TABLE home_cleaners (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(45) NOT NULL,
+    number_in_package INT NOT NULL,
+    cost_per_item FLOAT NOT NULL,
+    selling_price FLOAT NOT NULL,
+    gross_cost AS (cost_per_item * number_in_package) STORED
+);
+CREATE TABLE paper_goods (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(45) NOT NULL,
+    number_in_package INT NOT NULL,
+    cost_per_item FLOAT NOT NULL,
+    selling_price FLOAT NOT NULL,
+    gross_cost AS (cost_per_item * number_in_package) STORED
+);
+CREATE TABLE frozen_products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(45) NOT NULL,
+    number_in_package INT NOT NULL,
+    cost_per_item FLOAT NOT NULL,
+    selling_price FLOAT NOT NULL,
+    gross_cost AS (cost_per_item * number_in_package) STORED
+);
+
+CREATE TABLE bills (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(45) NOT NULL,
+    amount FLOAT NOT NULL
+);
+
+CREATE TABLE issued_goods (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    receiver VARCHAR(45) NOT NULL,
+    good VARCHAR(45) NOT NULL,
+    quantity INT NOT NULL,
+    cost FLOAT NOT NULL,
+    gross_cost FLOAT GENERATED ALWAYS AS (quantity * cost) STORED
+);
+
+CREATE TABLE vendors (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(45) NOT NULL,
+    gender VARCHAR(45) NOT NULL,
+    age INT NOT NULL,
+    contact INT NOT NULL,
+    product_type VARCHAR(45) NOT NULL
+);
+NB: This script file will help you initialize your database before you start using the application to manipulate the database.
+
+
+
+Project Structure:
+
+•	All inventory data entities are stored in inventoriescategories package or folder, database connection class is stored in database package but is never used. It was used to test the connection
+•	All controllers and application classes are in the main .com.example.jerrypaddy package. When put in different directories, application would crush.
