@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="677.0" prefWidth="1259.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jerrypaddy.Trrrr">
+  <tabs>
+      <Tab text="Update Goods">
+          <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="425.0" prefWidth="1143.0">
+                  <children>
+                      <HBox layoutX="150.0" layoutY="14.0" prefHeight="93.0" prefWidth="854.0" spacing="30.0" style="-fx-background-color: #FF56785E;" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="28.0">
+                          <children>
+                              <VBox alignment="CENTER" prefHeight="55.0" prefWidth="129.0" spacing="12.0">
+                                  <children>
+                                      <Label text="Type Of Product:">
+                                          <font>
+                                              <Font name="System Bold" size="14.0" />
+                                          </font>
+                                      </Label>
+                                      <Label fx:id="type_product" text="Select from Menu">
+                                          <font>
+                                              <Font size="14.0" />
+                                          </font>
+                                      </Label>
+                                  </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="55.0" prefWidth="167.0" spacing="10.0">
+                                  <children>
+                                      <Label text="Name of Product:">
+                                          <font>
+                                              <Font name="System Bold" size="14.0" />
+                                          </font>
+                                      </Label>
+                                      <TextField fx:id="nameProduct" prefHeight="25.0" prefWidth="127.0" />
+                                  </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="55.0" prefWidth="148.0" spacing="10.0">
+                                  <children>
+                                      <Label text="Number In Package:">
+                                          <font>
+                                              <Font name="System Bold" size="14.0" />
+                                          </font>
+                                      </Label>
+                                      <TextField fx:id="numberInPackage" />
+                                  </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="55.0" prefWidth="125.0" spacing="10.0">
+                                  <children>
+                                      <Label text="Cost Per Item:">
+                                          <font>
+                                              <Font name="System Bold" size="14.0" />
+                                          </font>
+                                      </Label>
+                                      <TextField fx:id="cost_per_item" />
+                                  </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="55.0" prefWidth="122.0" spacing="10.0">
+                                  <children>
+                                      <Label text="Selling Price:">
+                                          <font>
+                                              <Font name="System Bold" size="14.0" />
+                                          </font>
+                                      </Label>
+                                      <TextField fx:id="sellingPrice" />
+                                  </children>
+                              </VBox>
+
+                          </children>
+                      </HBox>
+                      <Button fx:id="add" layoutX="1018.0" layoutY="45.0" mnemonicParsing="false" onAction="#onAddGoods" prefHeight="43.0" prefWidth="111.0" text="ADD" AnchorPane.leftAnchor="1018.0" AnchorPane.topAnchor="45.0">
+                          <font>
+                              <Font name="System Bold" size="24.0" />
+                          </font>
+                      </Button>
+                      <MenuButton fx:id="addGoods" layoutX="20.0" layoutY="56.0" mnemonicParsing="false" text="Add Goods" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="56.0">
+                          <items>
+                              <MenuItem fx:id="beverages" mnemonicParsing="false" onAction="#onBeverageClick" text="Beverages" />
+                              <MenuItem fx:id="bakery" mnemonicParsing="false" onAction="#onBakeryClick" text="Bakery" />
+                              <MenuItem fx:id="canned" mnemonicParsing="false" onAction="#onCannedClick" text="Canned" />
+                              <MenuItem fx:id="dairy" mnemonicParsing="false" onAction="#onDairyClick" text="Dairy Products" />
+                              <MenuItem fx:id="dry" mnemonicParsing="false" onAction="#onDryClick" text="Dry/Baking Goods" />
+                              <MenuItem fx:id="frozenProducts" mnemonicParsing="false" onAction="#onFrozenClick" text="Frozen Products" />
+                              <MenuItem fx:id="meat" mnemonicParsing="false" onAction="#onMeatClick" text="Meat" />
+                              <MenuItem fx:id="farmProduce" mnemonicParsing="false" onAction="#onFarmClick" text="Farm Produce" />
+                              <MenuItem fx:id="homeCleaners" mnemonicParsing="false" onAction="#onHomeCleanersClick" text="Home Cleaners" />
+                              <MenuItem fx:id="paperGoods" mnemonicParsing="false" onAction="#onPaperGoodsClick" text="Paper Goods" />
+                              <MenuItem fx:id="homeCare" mnemonicParsing="false" onAction="#onHomeCareClick" text="Home Care" />
+                          </items>
+                          <font>
+                              <Font size="14.0" />
+                          </font>
+                      </MenuButton>
+                  <AnchorPane layoutX="35.0" layoutY="157.0" prefHeight="479.0" prefWidth="930.0" style="-fx-background-color: #FFF543;">
+                     <children>
+                        <Label layoutX="387.0" layoutY="14.0" text="REMOVE GOODS " AnchorPane.leftAnchor="340.0" AnchorPane.topAnchor="10.0">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="remove_table" layoutX="25.0" layoutY="53.0" prefHeight="417.0" prefWidth="738.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="25.0">
+                          <columns>
+                            <TableColumn fx:id="name_column" prefWidth="214.0" text="Name" />
+                            <TableColumn fx:id="number_column" prefWidth="110.0" text="Number In Package" />
+                              <TableColumn fx:id="cost_column" prefWidth="120.0" text="Cost Price Per Item" />
+                              <TableColumn fx:id="selling_column" prefWidth="128.0" text="Selling Price Per Item" />
+                              <TableColumn fx:id="gross_column" prefWidth="152.0" text="Gross Cost Price" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="removeGoods" layoutX="792.0" layoutY="332.0" mnemonicParsing="false" onAction="#onGoodsRemove" prefHeight="39.0" prefWidth="107.0" text="REMOVE GOODS" AnchorPane.bottomAnchor="21.0" AnchorPane.rightAnchor="31.0" />
+                        <Button layoutX="776.0" layoutY="53.0" mnemonicParsing="false" onAction="#onViewGoodsToRemove" prefHeight="62.0" prefWidth="124.0" text="View Goods To Remove" textAlignment="CENTER" wrapText="true" />
+                     </children>
+                  </AnchorPane>
+                  </children></AnchorPane>
+          </content>
+      </Tab>
+      <Tab text="View Goods">
+          <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="view_goods" layoutX="39.0" layoutY="87.0" prefHeight="416.0" prefWidth="734.0">
+                    <columns>
+                      <TableColumn fx:id="view_name" prefWidth="269.0" text="name" />
+                      <TableColumn fx:id="view_number" prefWidth="110.0" text="number" />
+                        <TableColumn fx:id="view_cost" prefWidth="119.0" text="cost_per_item" />
+                        <TableColumn fx:id="view_sell" prefWidth="118.0" text="selling price" />
+                        <TableColumn fx:id="view_gross" prefWidth="114.0" text="gross cost" />
+                    </columns>
+                  </TableView>
+                  <HBox alignment="CENTER" layoutX="31.0" layoutY="14.0" prefHeight="53.0" style="-fx-background-color: #FFF063;" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="14.0">
+                     <children>
+                        <Label text="VIEW GOODS">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Button layoutX="793.0" layoutY="87.0" mnemonicParsing="false" onAction="#onViewGoods" text="View" AnchorPane.leftAnchor="793.0" AnchorPane.topAnchor="87.0" />
+               </children></AnchorPane>
+          </content>
+      </Tab>
+      <Tab text="View Issued Goods">
+          <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="issued_table" layoutX="34.0" layoutY="96.0" prefHeight="518.0" prefWidth="721.0">
+                    <columns>
+                      <TableColumn fx:id="receiver_column" prefWidth="224.0" text="Receiver Name" />
+                      <TableColumn fx:id="issued_column" prefWidth="198.0" text="Name of Issued Goods" />
+                        <TableColumn fx:id="quantity_column" prefWidth="77.0" text="Quantity" />
+                        <TableColumn fx:id="issued_costColumn" prefWidth="99.0" text="Cost Price" />
+                        <TableColumn fx:id="issued_gross" prefWidth="118.0" text="Gross Cost Price" />
+                    </columns>
+                  </TableView>
+                  <HBox alignment="CENTER" layoutX="12.0" layoutY="15.0" prefHeight="59.0" prefWidth="1224.0" style="-fx-background-color: #DFEF457F;" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="15.0">
+                     <children>
+                        <Label alignment="CENTER" text="ISSUE AND VIEW ISSUED GOODS">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children></HBox>
+                  <Button layoutX="766.0" layoutY="96.0" mnemonicParsing="false" onAction="#onViewIssuedGoods" text="VIEW" />
+                  <VBox alignment="CENTER_RIGHT" layoutX="866.0" layoutY="193.0" prefHeight="262.0" prefWidth="366.0" style="-fx-background-color: #DFE2FFFF;" AnchorPane.leftAnchor="866.0" AnchorPane.topAnchor="193.0">
+                     <children>
+                        <HBox prefHeight="41.0" prefWidth="319.0" spacing="10.0">
+                           <children>
+                              <Label text="Receiver's Name:">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="4.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="rec_name" prefHeight="25.0" prefWidth="224.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="39.0" prefWidth="357.0" spacing="10.0">
+                           <children>
+                              <Label text="Name of Good:">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="4.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="issued_good" prefHeight="25.0" prefWidth="227.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="44.0" prefWidth="319.0" spacing="10.0">
+                           <children>
+                              <Label text="Quantity:">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="4.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="quantity" prefHeight="25.0" prefWidth="140.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="46.0" prefWidth="319.0" spacing="10.0">
+                           <children>
+                              <Label text="Cost Price:">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="4.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="issued_cost" prefHeight="25.0" prefWidth="170.0" />
+                           </children>
+                        </HBox>
+                        <Button mnemonicParsing="false" onAction="#onAddIssuedGoods" text="ADD ISSUED GOOD">
+                           <VBox.margin>
+                              <Insets right="10.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+          </content>
+      </Tab>
+      <Tab text="Vendors">
+          <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="v_table" layoutX="31.0" layoutY="83.0" prefHeight="264.0" prefWidth="668.0" AnchorPane.leftAnchor="31.0" AnchorPane.topAnchor="83.0">
+                    <columns>
+                      <TableColumn fx:id="vend_name" prefWidth="201.0" text="Name" />
+                      <TableColumn fx:id="vend_product" minWidth="0.0" prefWidth="157.0" text="Main Product " />
+                        <TableColumn fx:id="vend_gender" prefWidth="97.0" text="Gender" />
+                        <TableColumn fx:id="vend_age" prefWidth="89.0" text="Age" />
+                        <TableColumn fx:id="vend_contact" prefWidth="125.0" text="Contact" />
+                    </columns>
+                  </TableView>
+                  <Label layoutX="84.0" layoutY="29.0" text="Information About Vendors:" AnchorPane.leftAnchor="84.0" AnchorPane.topAnchor="29.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <VBox alignment="CENTER_RIGHT" layoutX="737.0" layoutY="83.0" prefHeight="261.0" prefWidth="348.0" style="-fx-background-color: #FFDD54;">
+                     <children>
+                        <HBox prefHeight="37.0" prefWidth="348.0" spacing="20.0">
+                           <children>
+                              <Label text="Name: ">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="8.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="vendor_name" prefHeight="25.0" prefWidth="263.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="37.0" prefWidth="348.0" spacing="30.0">
+                           <children>
+                              <Label text="Product Type: ">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="8.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="vendor_product" prefHeight="25.0" prefWidth="204.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="37.0" prefWidth="348.0" spacing="30.0">
+                           <children>
+                              <Label text="Gender: ">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="8.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="v_gender" prefHeight="25.0" prefWidth="78.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="43.0" prefWidth="348.0" spacing="30.0">
+                           <children>
+                              <Label text="Age:">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="8.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="v_age" prefHeight="25.0" prefWidth="67.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="44.0" prefWidth="348.0" spacing="30.0">
+                           <children>
+                              <Label text="Contact: ">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="8.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="v_contact" />
+                           </children>
+                        </HBox>
+                        <Button fx:id="addVendor" mnemonicParsing="false" onAction="#onAddVendor" text="ADD">
+                           <VBox.margin>
+                              <Insets right="8.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <Label layoutX="752.0" layoutY="29.0" text="Add New Vendors:" AnchorPane.leftAnchor="752.0" AnchorPane.topAnchor="29.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="339.0" layoutY="30.0" mnemonicParsing="false" onAction="#onViewVendors" text="View or Refresh" AnchorPane.leftAnchor="339.0" AnchorPane.topAnchor="30.0" />
+               </children></AnchorPane>
+          </content>
+      </Tab>
+      <Tab text="Bills">
+          <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <TableView fx:id="bill_table" layoutX="41.0" layoutY="124.0" prefHeight="357.0" prefWidth="567.0">
+                    <columns>
+                      <TableColumn fx:id="bill_name" prefWidth="274.0" text="Bill" />
+                      <TableColumn fx:id="bill_amount" prefWidth="292.0" text="Amount" />
+                    </columns>
+                  </TableView>
+                  <HBox alignment="CENTER" layoutX="16.0" layoutY="14.0" prefHeight="63.0" prefWidth="1185.0" style="-fx-background-color: #F99F2287;" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="14.0">
+                     <children>
+                        <Label text="VIEW BILLS">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Button layoutX="649.0" layoutY="124.0" mnemonicParsing="false" onAction="#onViewBill" prefHeight="33.0" prefWidth="55.0" text="VIEW" />
+               </children></AnchorPane>
+          </content>
+      </Tab>
+  </tabs>
+</TabPane>

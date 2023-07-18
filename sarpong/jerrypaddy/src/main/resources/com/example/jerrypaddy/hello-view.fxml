@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="632.0" prefWidth="876.0" xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="com.example.jerrypaddy.HelloController" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button layoutX="525.0" layoutY="329.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="50.0" text="&gt;&gt;" AnchorPane.bottomAnchor="37.0" AnchorPane.rightAnchor="25.0" fx:id="nextPage" onAction="#switchScene"/>
+      <VBox alignment="CENTER" layoutX="250.0" layoutY="58.0" prefHeight="384.0" prefWidth="376.0" AnchorPane.bottomAnchor="58.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="58.0">
+         <children>
+      
+       <Label text="INVENTORY">
+           <font>
+               <Font name="Maiandra GD" size="64.0" />
+           </font>
+       </Label>
+            <ImageView fitHeight="200.0" fitWidth="178.0">
+               <image>
+                  <Image url="@Black-Goat.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER" layoutX="362.0" layoutY="607.0" prefHeight="23.0" prefWidth="171.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="362.0" AnchorPane.rightAnchor="343.0" AnchorPane.topAnchor="607.0">
+         <children>
+            <Label prefHeight="27.0" prefWidth="175.0" text="Powered By Goated">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
